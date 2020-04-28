@@ -17,7 +17,7 @@ this file can run if you have python installed on your computer. If you do, this
 	-Enter the path that you want the videos to be saved changing the "download_path" variable's string with your path
 	-save the file and close it
 
-4.run the python file. when on the directory run this command:
+4.run the python file. when on the directory (will already be there) run this command:
 	
 	python3 downloadVids.py
 

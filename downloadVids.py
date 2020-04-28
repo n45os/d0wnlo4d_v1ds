@@ -41,7 +41,7 @@ def get_video_name(sites):
         soup = BeautifulSoup(r.content, "lxml")
         for link in soup.title:
             site.vid_links.append(soup.title.string)
-    return sites 
+    return sites
 
 
 
@@ -52,9 +52,8 @@ def get_all_mp4_links_from(sites):
         soup = BeautifulSoup(r.content, "lxml")
         for link in soup.find_all(  src = re.compile(".mp4"), ):
             site.vid_links.append(link.get("src"))
-    return sites 
+    return sites
 
-#print(len(get_all_mp4_links_from("https://www.erome.com/a/Aat3CYQK")))
 
 
 def download_multiple(sites):
@@ -70,7 +69,7 @@ def download(links, name):
             code = urlparse(link)[2].split('/')[3].split('.')[0].split('_')[0]
         except:
             code = link[-8:]
-        
+
         if code not in downloaded_links:
             print("tries to get request...")
             #r = requests.get(link , stream = True)
@@ -105,7 +104,7 @@ def download(links, name):
             downloaded_links.append(code)
     print("done downloading {}".format(name))
 
- 
+
 
 def downloadFromCommandLine():
     if download_path == "ENTER_YOUR_PATH_HERE":
